@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escape</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #fff;
+    }
+    header {
+      background: linear-gradient(135deg, #1f3c88, #2e8b57);
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      color: #dcdcdc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: #1e1e1e;
+      padding: 1rem;
+    }
+    nav button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav button.active,
+    nav button:hover {
+      background: #2e8b57;
+    }
+    .gallery {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .gallery.active {
+      display: grid;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .about {
+      background: #1e1e1e;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .lang-buttons {
+      margin-top: 1rem;
+    }
+    .lang-buttons button {
+      margin: 0.2rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Escape</h1>
+    <p>Explore the world through my lens</p>
+  </header>
+  <nav>
+    <button onclick="showGallery('germany')" class="active">🇩🇪 Germany</button>
+    <button onclick="showGallery('israel')">🇮🇱 Israel</button>
+    <button onclick="showGallery('netherlands')">🇳🇱 Netherlands</button>
+    <button onclick="showGallery('france')">🇫🇷 France</button>
+    <button onclick="showGallery('romania')">🇷🇴 Romania</button>
+  </nav>
+  <div id="germany" class="gallery active">
+    <img src="images/germany_100.jpg" alt="Germany photo" />
+    <img src="images/germany_101.jpg" alt="Germany photo" />
+    <img src="images/germany_102.jpg" alt="Germany photo" />
+    <img src="images/germany_103.jpg" alt="Germany photo" />
+    <img src="images/germany_104.jpg" alt="Germany photo" />
+    <img src="images/germany_105.jpg" alt="Germany photo" />
+    <img src="images/germany_106.jpg" alt="Germany photo" />
+    <img src="images/germany_107.jpg" alt="Germany photo" />
+    <img src="images/germany_108.jpg" alt="Germany photo" />
+    <img src="images/germany_109.jpg" alt="Germany photo" />
+  </div>
+  <div id="israel" class="gallery">
+    <img src="images/israel_1.jpg" alt="Israel photo" />
+    <img src="images/israel_2.jpg" alt="Israel photo" />
+    <img src="images/israel_3.jpg" alt="Israel photo" />
+    <img src="images/israel_4.jpg" alt="Israel photo" />
+  </div>
+  <div id="netherlands" class="gallery">
+    <img src="images/netherlands_1.jpg" alt="Netherlands photo" />
+  </div>
+  <div id="france" class="gallery">
+    <img src="images/france_1.jpg" alt="France photo" />
+    <img src="images/france_2.jpg" alt="France photo" />
+    <img src="images/france_3.jpg" alt="France photo" />
+  </div>
+  <div id="romania" class="gallery">
+    <img src="images/romania_1.jpg" alt="Romania photo" />
+  </div>
+  <section class="about">
+    <h2>About Escape</h2>
+    <p><em>Escape</em> is more than a name — it's a sensation. With every photo, I offer you a chance to break from the routine, to breathe in moments of serenity, light, and wonder. This is a personal quest — to escape, reflect, and reconnect with the essence of life.</p>
+    <p>Instagram: <a href="https://instagram.com/escape_y9" target="_blank">@escape_y9</a></p>
+    <div class="lang-buttons">
+      <button>🇬🇧 English</button>
+      <button>🇩🇪 Deutsch</button>
+      <button>🇮🇱 עברית</button>
+      <button>🇸🇦 العربية</button>
+    </div>
+  </section>
+  <footer>© 2025 Escape | Photography by Yamen Maghamsa</footer>
+  <script>
+    function showGallery(country) {
+      document.querySelectorAll('.gallery').forEach(g => g.classList.remove('active'));
+      document.getElementById(country).classList.add('active');
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
